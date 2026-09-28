@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+    --font-display: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
+
+    --color-paper: #f8f3e7;
+    --color-ink: #1a140c;
+    --color-ink-muted: #5c5340;
+
+    --color-chapter-about: #b45309;
+    --color-chapter-experience: #166534;
+    --color-chapter-skills: #1e3a8a;
+    --color-chapter-projects: #9d174d;
+    --color-chapter-contact: #6d28d9;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-paper);
+    color: var(--color-ink)
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+}
+
+body {
+    background-image: radial-gradient(circle at 1px 1px, rgba(26, 20, 12, 0.04) 1px, transparent 0);
+    background-size: 22px 22px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--color-chapter-contact);
+    color: var(--color-paper)
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+}
