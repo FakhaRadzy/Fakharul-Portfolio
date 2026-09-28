@@ -5,6 +5,7 @@ import {
 } from "react";
 import { profile } from "../data/resume";
 import ChapterHeading from "./ChapterHeading";
+import { API_BASE_URL } from "../lib/api";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -28,7 +29,7 @@ function Contact() {
     setStatus("sending");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(`${API_BASE_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

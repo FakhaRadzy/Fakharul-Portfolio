@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import type { Project } from "../data/projects";
 import ChapterHeading from "./ChapterHeading";
+import { API_BASE_URL } from "../lib/api";
 
 function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/projects")
+    fetch(`${API_BASE_URL}/api/projects`)
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch(() => setProjects([]))
