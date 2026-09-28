@@ -8,15 +8,6 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 function App() {
-  const [status, setStatus] = useState("loading... ");
-
-  useEffect(() => {
-    fetch("api/health")
-      .then((res) => res.json())
-      .then((data) => setStatus(data.status))
-      .catch(() => setStatus("backend unreachable"));
-  }, []);
-
   return (
     <>
       <Nav />
